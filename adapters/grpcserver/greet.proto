@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option go_package = "github.com/andy-lee-cat/go-specs-greet/adapters/grpcserver";
+
+package grpcserver;
+
+// Greeter service definition.
+service Greeter {
+    // Sends a greeting.
+    rpc Greet (GreetRequest) returns (GreetReply) {}
+    // Sends a curse.
+    rpc Curse (CurseRequest) returns (CurseReply) {}
+}
+
+message GreetRequest {
+    string name = 1;
+}
+
+message GreetReply {
+    string message = 1;
+}
+
+message CurseRequest {
+    string name = 1;
+}
+
+message CurseReply {
+    string message = 1;
+}
