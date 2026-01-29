@@ -10,7 +10,7 @@ type Driver struct {
 	Client  *http.Client
 }
 
-func (d *Driver) Greet(name string) (string, error) {
+func (d Driver) Greet(name string) (string, error) {
 	res, err := d.Client.Get(d.BaseURL + "?name=" + name)
 	if err != nil {
 		return "", err
